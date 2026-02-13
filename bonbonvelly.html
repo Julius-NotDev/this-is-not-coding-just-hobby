@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head> <!-- css 라인-->
+  <meta charset="UTF-8" />
+  <title>봉봉밸리 | 커스텀 아이템 도감</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f1117;
+      color: #e6edf3;
+      margin: 0;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .tree {
+      list-style: none;
+      padding-left: 0;
+    }
+    .tree summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 6px;
+      background: #161b22;
+      border: 1px solid #2b3138;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+    .tree ul {
+      margin-left: 20px;
+      padding-left: 12px;
+      border-left: 1px dashed #444;
+    }
+    .tree li {
+      margin: 6px 0;
+    }
+    .item {
+      background: #1c2128;
+      border: 1px solid #2b3138;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 6px 0 12px;
+    }
+    .item h3 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      color: #58a6ff;
+    }
+    .item p {
+      margin: 4px 0;
+      color: #c9d1d9;
+    }
+    .note {
+      font-size: 14px;
+      color: #8b949e;
+      margin-top: 6px;
+    }
+
+    .item img.icon {
+      width: 64px;
+     height: 64px;
+     image-rendering: pixelated; /* 픽셀 아트 느낌 유지 */
+      display: block;
+     margin-bottom: 8px;
+    }
+
+        .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0d1117;
+      padding: 16px 24px;
+      border-bottom: 1px solid #2b3138;
+      }
+      .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .logo {
+        width: 48px;
+        height: 48px;
+        image-rendering: pixelated;
+      }
+      .title-group h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #e6edf3;
+      }
+      .title-group p {
+        margin: 4px 0 0;
+        color: #9aa7b3;
+        font-size: 14px;
+      }
+      .copy-btn {
+        background: #238636;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .copy-btn:hover {
+        background: #2ea043;
+      }
+
+            .item-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        background: #1c2128;
+        border: 1px solid #2b3138;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 12px 0;
+        align-items: center; /* 핵심: 세로 중앙 정렬 */
+      }
+
+
+      /* 조합법 이미지 영역 */
+      .recipe-image {
+        flex: 0 0 auto;
+        width: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* 이미지 자체도 중앙 정렬 */
+      }
+      .recipe-image img {
+        width: 100%;
+        max-width: 160px;
+        height: auto;
+        image-rendering: pixelated;
+        border: 1px solid #444;
+        border-radius: 4px;
+      }
+
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+  <div class="logo-area">
+    <img src="img/servericon.png" alt="봉봉밸리" class="logo" />
+    <div class="title-group">
+      <h1>봉봉밸리 커스텀 아이템 목록</h1>
+      <p>봉봉밸리에서만 볼 수 있는 특별한 커스텀 아이템을 만나보세요!</p>
+    </div>
+  </div>
+</header>
+
+  <ul class="tree">
+    <!-- 채굴 -->
+    <li>
+  <details>
+    <summary>⛏️ 채굴</summary>
+    <ul>
+      <li>
+        <details>
+          <summary>석탄</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/coal.png" alt="부러진 곡괭이 손잡이" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>부러진 곡괭이 손잡이</h3>
+                <p><strong>획득처:</strong> 석탄광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/coal_one.png" alt="석탄 원소" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>석탄 원소</h3>
+                <p><strong>획득처:</strong> 석탄광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 밸리움 제작.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>철</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/iron.png" alt="윤나는 철조각" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>윤나는 철조각</h3>
+                <p><strong>획득처:</strong> 철광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+              <div class="item">
+                 <!-- 아이템 이미지 -->
+                <img src="img/iron_one.png" alt="철 원소" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>철 원소</h3>
+                <p><strong>획득처:</strong> 철광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 밸리움 제작.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>금</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/gold.png" alt="도금 목걸이" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>도금 목걸이</h3>
+                <p><strong>획득처:</strong> 금광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/gold_one.png" alt="금 원소" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>금 원소</h3>
+                <p><strong>획득처:</strong> 금광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 밸리움 제작.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>구리</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/copper.png" alt="녹슨 숟가락" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>녹슨 숟가락</h3>
+                <p><strong>획득처:</strong> 구리광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/copper_one.png" alt="구리 원소" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>구리 원소</h3>
+                <p><strong>획득처:</strong> 구리광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 밸리움 제작.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>청금석</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/lapis.png" alt="푸른 구슬" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>푸른 구슬</h3>
+                <p><strong>획득처:</strong> 청금석광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/lapis_one.png" alt="청금석 원소" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>청금석 원소</h3>
+                <p><strong>획득처:</strong> 청금석광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 밸리움 제작.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>레드스톤</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/red.png" alt="루비" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>루비</h3>
+                <p><strong>획득처:</strong> 레드스톤광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/red_one.png" alt="레드스톤 원소" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>레드스톤 원소</h3>
+                <p><strong>획득처:</strong> 레드스톤광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 밸리움 제작.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>자수정</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ame.png" alt="빛바랜 자수정 조각" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>빛바랜 자수정 조각</h3>
+                <p><strong>획득처:</strong> 자수정광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ame_one.png" alt="자수정 원소" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>자수정 원소</h3>
+                <p><strong>획득처:</strong> 자수정광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 밸리움 제작.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>에메랄드</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/eme.png" alt="에메랄드 팔찌" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>에메랄드 팔찌</h3>
+                <p><strong>획득처:</strong> 에메랄드광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/eme_one.png" alt="에메랄드 원소" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>에메랄드 원소</h3>
+                <p><strong>획득처:</strong> 에메랄드광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 밸리움 제작.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>다이아몬드</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/dia.png" alt="크림슨 다이아" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>크림슨 다이아</h3>
+                <p><strong>획득처:</strong> 다이아몬드광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/dia_one.png" alt="다이아몬드 원소" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>다이아몬드 원소</h3>
+                <p><strong>획득처:</strong> 다이아몬드광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 밸리움 제작.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>석영</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/suk.png" alt="수상한 가루" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>수상한 가루</h3>
+                <p><strong>획득처:</strong> 석영광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감, 상점에 판매.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>네더라이트</summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/nether.png" alt="고대 문장" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>고대 문장</h3>
+                <p><strong>획득처:</strong> 네더라이트광맥 채굴에서 확률적으로</p>
+                <p><strong>사용처:</strong> 주간수집도감.</p>
+                <p class="note">※ 채굴장에서만 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </details>
+</li>
+
+    <!-- 사냥 -->
+    <li>
+      <details>
+        <summary>🗡️ 사냥터</summary>
+        <ul>
+        <li>
+        <details>
+          <summary>
+            <img src="img/ovo_go2.png" alt="버섯섬" class="icon" />
+            버섯섬
+          </summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_mushposared.png" alt="빨간색 포자" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>빨간색 포자</h3>
+                <p><strong>획득처:</strong> 버섯섬에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감.</p>
+                <p class="note">※ 빨간 버섯이 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_mushposa.png" alt="흰색 포자" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>흰색 포자</h3>
+                <p><strong>획득처:</strong> 버섯섬에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감.</p>
+                <p class="note">※ 갈색 버섯이 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_mushposacyan.png" alt="청록색 포자" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>청록색 포자</h3>
+                <p><strong>획득처:</strong> 버섯섬에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감.</p>
+                <p class="note">※ 워프드 버섯이 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_mushposaorange.png" alt="주황색 포자" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>주황색 포자</h3>
+                <p><strong>획득처:</strong> 버섯섬에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감.</p>
+                <p class="note">※ 크림슨 버섯이 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_mushposapurple.png" alt="보라색 포자" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>보라색 포자</h3>
+                <p><strong>획득처:</strong> 버섯섬에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감.</p>
+                <p class="note">※ 검은 버섯이 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_goldmush.png" alt="황금 버섯" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>황금 버섯</h3>
+                <p><strong>획득처:</strong> 버섯섬에서 낮은 확률로</p>
+                <p><strong>사용처:</strong> 주간수집도감.</p>
+                <p class="note">※ 모든 버섯이 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_valleynite.png" alt="벨리나이트 주괴" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>벨리나이트 주괴</h3>
+                <p><strong>획득처:</strong> 버섯섬에서 매우 낮은 확률로</p>
+                <p><strong>사용처:</strong> 신화 아이템 강화 주괴.</p>
+                <p class="note">※ 모든 버섯이 드랍</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details> <!-- 하피의 알, 겉날개 조각-->
+          <summary>
+            <img src="img/ovo_go3.png" alt="유혹의 둥지" class="icon" />
+            유혹의 둥지
+          </summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_bikini4.png" alt="빨간 하피의 상의" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>빨간 하피의 상의</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 빨간 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_bikini3.png" alt="빨간 하피의 하의" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>빨간 하피의 하의</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 빨간 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_feather2.png" alt="빨간 하피의 깃털" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>빨간 하피의 깃털</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 빨간 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_bikini1.png" alt="푸른 하피의 상의" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>파란 하피의 상의</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 푸른 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_bikini2.png" alt="푸른 하피의 하의" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>파란 하피의 하의</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 푸른 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_feather1.png" alt="푸른 하피의 깃털" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>푸른 하피의 깃털</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 빨간 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_bikini5.png" alt="초록 하피의 상의" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>초록 하피의 상의</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 초록 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_bikini6.png" alt="초록 하피의 하의" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>초록 하피의 하의</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 초록 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_feather3.png" alt="초록 하피의 깃털" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>초록 하피의 깃털</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 초록 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_harpyegg.png" alt="하피의 알" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>하피의 알</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 하피가 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_proposalring.png" alt="청혼 반지" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>청혼 반지</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 스켈레톤 종류 몬스터에서 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_freshrose.png" alt="장미 한 송이" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>장미 한 송이</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 확률적으로</p>
+                <p><strong>사용처:</strong> 추후 공개 예정.</p>
+                <p class="note">※ 스켈레톤 종류 몬스터에서 드랍</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/bat_wing.png" alt="겉날개 조각" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>겉날개 조각</h3>
+                <p><strong>획득처:</strong> 유혹의 둥지에서 매우 낮은 확률적으로</p>
+                <p><strong>사용처:</strong> 겉날개 제작.</p>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>
+            <img src="img/ovo_go1.png" alt="탐욕의 동굴" class="icon" />
+            탐욕의 동굴
+          </summary>
+          <ul>
+            <li>
+              <!--<div class="item"> -->
+                <!-- 아이템 이미지 -->
+               <!--<img src="img/uh_mushposared.png" alt="빨간색 포자" class="icon" />-->
+                <!-- 아이템 이름 -->
+                <!--<h3>빨간색 포자</h3>
+                <p><strong>획득처:</strong> 버섯섬에서 확률적으로</p>
+                <p><strong>사용처:</strong> 수집도감.</p>
+                <p class="note">※ 빨간 버섯이 드랍</p> -->
+                <h3>※ 공개 예정 ※</h3>
+              </div>
+            </li>
+          </ul>
+        </details>
+      </li>
+      </ul>
+      </details>
+    </li>
+
+    <li>
+  <details>
+    <summary>🌾 농사</summary>
+    <ul>
+      <!-- 농사 도구 -->
+      <li>
+        <details>
+          <summary>
+            농사 도구
+          </summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/nat.png" alt="낫" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>낫</h3>
+                <p><strong>획득처:</strong> 상점 구입, 농경의 혼 교환</p>
+                <p><strong>사용처:</strong> 작물을 수확할 때 사용</p>
+                <p class="note">※ 티어에 따라 수확사이즈가 다름</p>
+              </div>
+               <!--<div class="item">-->
+                <!-- 아이템 이미지 -->
+                <!--<img src="img/gal.png" alt="갈퀴" class="icon" />-->
+                <!-- 아이템 이름 -->
+                <!--<h3>갈퀴</h3>
+                <p><strong>획득처:</strong> 상점 구입, 농경의 혼 교환</p>
+                <p><strong>사용처:</strong> 작물을 수확한 뒤 추가작물을 수확할 때 사용</p>
+                <p class="note">※ 티어에 따라 수확사이즈가 다름</p>
+              </div>-->
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/mul.png" alt="마법의 물병" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>마법의 물병</h3>
+                <p><strong>획득처:</strong> 상점 구입</p>
+                <p><strong>사용처:</strong> 작물에 물을 줄 때 사용</p>
+                <p class="note">※ 3x3 사이즈 농경지에 물을 줌</p>
+                </div>
+
+              <!-- 아이템 설명 -->
+              <div class="item">
+                <img src="img/bat.png" alt="밭" class="icon" />
+                <h3>밭</h3>
+                <p><strong>획득처:</strong> 제작대로 제작</p>
+                <p><strong>사용처:</strong> 커스텀 작물을 심을 수 있는 공간</p>
+                <p><strong>조합:</strong> 나무 판자x7 + 흙x2</p>
+                <p class="note">※ 한 청크당 64개만 설치가 가능</p>
+              </div>
+              <!-- 조합법 이미지 -->
+              <!--<div class="recipe-image">
+                <img src="img/bat_make.png" alt="밭 조합법" />
+              </div>-->
+            </div>
+
+            </li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- 작물 -->
+      <li>
+        <details>
+          <summary>
+            작물
+          </summary>
+          <ul>
+            <li>※ 아직 등록된 아이템이 없습니다</li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- 희귀 작물 -->
+      <li>
+        <details>
+          <summary>
+            희귀 작물
+          </summary>
+          <ul>
+            <li>※ 아직 등록된 아이템이 없습니다</li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- 거대 작물 -->
+      <li>
+        <details>
+          <summary>
+            거대 작물
+          </summary>
+          <ul>
+            <li>※ 아직 등록된 아이템이 없습니다</li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- 특수아이템 -->
+      <li>
+        <details>
+          <summary>
+            특수아이템
+          </summary>
+          <ul>
+            <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/elemental_essense.png" alt="농경의 혼" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>농경의 혼</h3>
+                <p><strong>획득처:</strong> 고급 제작대</p>
+                <p><strong>사용처:</strong> 농사상점 교환.</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_fairybreath.png" alt="요정의 숨결" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>요정의 숨결</h3>
+                <p><strong>획득처:</strong> 제작의뢰Ⅱ</p>
+                <p><strong>사용처:</strong> 주간수집도감, 고급 제작대.</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_faknowledge.png" alt="파브르의 지식" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>파브르의 지식</h3>
+                <p><strong>획득처:</strong> 제작의뢰Ⅱ</p>
+                <p><strong>사용처:</strong> 주간수집도감, 고급 제작대.</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_drroot.png" alt="드루이드의 뿌리" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>드루이드의 뿌리</h3>
+                <p><strong>획득처:</strong> 제작의뢰Ⅱ</p>
+                <p><strong>사용처:</strong> 주간수집도감, 고급 제작대.</p>
+              </div>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </details>
+</li>
+    <!-- 낚시 -->
+    <!--<li>
+      <details>
+        <summary>🎣 낚시</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>일반 물고기</summary>
+              <ul>
+                <li>
+                  <div class="item">
+                    <h3>🐟 일반 물고기</h3>
+                    <p><strong>획득처:</strong> 모든 물가에서 낚시 시 85% 확률</p>
+                    <p><strong>설명:</strong> 요리 재료로 사용되며, 일부 퀘스트 아이템으로도 활용됨.</p>
+                    <p class="note">※ 비 오는 날에는 확률 증가</p>
+                  </div>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </details>
+    </li>-->
+
+    <!-- 기타 -->
+    <li>
+      <details>
+        <summary>✨ 귀중품</summary>
+        <ul>
+          <li>
+        <details>
+          <summary>
+            <!--<img src="img/ovo_go2.png" alt="버섯섬" class="icon" />-->
+            ⭐ 특별 아이템
+          </summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_bundle.png" alt="토큰 보따리" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>토큰 보따리</h3>
+                <p><strong>100만밸짜리 아이템이라니!</strong></p>
+              </div>
+              <!--<div class="item-row">-->
+              <!-- 아이템 설명 -->
+              <div class="item">
+                <img src="img/ovo_bab.png" alt="봉봉맛 오니기리" class="icon" />
+                <h3>봉봉맛 오니기리</h3>
+                <p><strong>획득처:</strong> 제작대로 제작</p>
+                <p><strong>사용처:</strong> 구리를 사용한 음식 (배고픔 4칸)</p>
+                <p><strong>조합:</strong> 구리블록x8 + 쌀x1</p>
+              </div>
+              <!-- 조합법 이미지 -->
+              <!--<div class="recipe-image">
+                <img src="img/bongbap.png" alt="밥 조합법" />
+              </div>-->
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_bear7.png" alt="생명의 밸리베어" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>생명의 밸리베어</h3>
+                <p><strong>획득처:</strong> 쿠폰, 이밴트 보상 등</p>
+                <p><strong>사용처:</strong> 인벤토리 세이브권.</p>
+                <p class="note">※ 인벤토리에 있을 때 죽으면 1개 소모</p>
+              </div>
+            </li>
+        </ul>
+        </details>
+        <details>
+          <summary>
+            <!--<img src="img/ovo_go2.png" alt="버섯섬" class="icon" />-->
+            🔨 강화
+          </summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_crystal.png" alt="밸리움" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>밸리움</h3>
+                <p><strong>획득처:</strong> 원소조합, 상점교환, 쿠폰 등</p>
+                <p><strong>사용처:</strong> 밸리나이트 주괴 강화.</p>
+                <p class="note">※ 1회 강화 시 1개 소모 (0~30 구간 전부 필요)</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_starite.png" alt="스타라이트" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>스타라이트</h3>
+                <p><strong>획득처:</strong> 수집도감 보상, 상점교환, 쿠폰 등</p>
+                <p><strong>사용처:</strong> 밸리나이트 주괴 강화.</p>
+                <p class="note">※ 1회 강화 시 1개 소모 (20~30 구간 필요)</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_shield.png" alt="환원방지권" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>환원방지권</h3>
+                <p><strong>획득처:</strong> 캐시상점 구입, 상점 교환, 쿠폰 등</p>
+                <p><strong>사용처:</strong> 밸리나이트 주괴 강화 실패 시 강화단계 하락 방지.</p>
+                <p class="note">※ 강화 실패시 1개 소모 및 성공시 소모되지 않음</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_pinkbottle.png" alt="소울보틀" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>소울보틀</h3>
+                <p><strong>획득처:</strong> 바닐라 100레벨 소모로 제작 (강화소 NPC)</p>
+                <p><strong>사용처:</strong> 신화등급 장비, 방어구, 인챈트 교환에 사용.</p>
+                <p class="note">※ 신화 교환시 소울보틀 3개 필요</p>
+              </div>
+            </li>
+        </ul>
+      </details>
+      <details>
+          <summary>
+            <!--<img src="img/ovo_go2.png" alt="버섯섬" class="icon" />-->
+            🎁 보상
+          </summary>
+          <ul>
+            <li>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_calender.png" alt="데일리밸리" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>데일리밸리</h3>
+                <p><strong>획득처:</strong> 출석체크 - 일일, 주간, 월간 보상</p>
+                <p><strong>사용처:</strong> 상점교환 - 보상상점 "데일리".</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/uh_minelistvalley.png" alt="마리밸리" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>마리밸리</h3>
+                <p><strong>획득처:</strong> 마인리스트 추천 보상</p>
+                <p><strong>사용처:</strong> 상점교환 - 보상상점 "마리".</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_csballey.png" alt="크리스탈밸리" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>크리스탈밸리</h3>
+                <p><strong>획득처:</strong> 캐시상점 구입, 쿠폰 등</p>
+                <p><strong>사용처:</strong> 상점교환 - 강화 관련 아이템.</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_ink.png" alt="잉크밸리" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>잉크밸리</h3>
+                <p><strong>획득처:</strong> 캐시상점 구입, 쿠폰 등</p>
+                <p><strong>사용처:</strong> 상점교환 - 시즌 치장 아이템.</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_coin_moon.png" alt="루나밸리" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>루나밸리</h3>
+                <p><strong>획득처:</strong> 잠수터 잠수 보상</p>
+                <p><strong>사용처:</strong> 상점교환 - 루나빌리지 "루나".</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_token_sliver.png" alt="실버토큰" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>골드토큰</h3>
+                <p><strong>획득처:</strong> 수집도감 보상</p>
+                <p><strong>사용처:</strong> 상점교환.</p>
+              </div>
+              <div class="item">
+                <!-- 아이템 이미지 -->
+                <img src="img/ovo_token_gold.png" alt="골드토큰" class="icon" />
+                <!-- 아이템 이름 -->
+                <h3>골드토큰</h3>
+                <p><strong>획득처:</strong> 주간 수집도감 보상</p>
+                <p><strong>사용처:</strong> 상점교환.</p>
+              </div>
+            </li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</body>
+</html>
